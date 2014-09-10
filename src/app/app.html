@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" data-ng-app="app" data-ng-csp data-ng-controller="AppController">
+<head>
+  <meta charset="utf-8">
+  <title ng-bind="appInfo.name + ' (' + appInfo.version + ')'"></title>
+
+  <link rel="stylesheet" href="../bower_components/angular/angular-csp.css">
+  <link rel="stylesheet" href="app.css">
+
+</head>
+<body>
+
+  <section class="wrapper">
+    <header data-ng-include="'app-nav.html'"></header>
+    <section class="app">
+      <section data-ui-view="appBody" class="app-body-pane"></section>
+      <section data-ui-view="appMenu" class="app-menu-panel" data-ng-class="{open: showMenu}"></section>
+    </section>
+
+    <footer></footer>
+  </section>
+
+  <script type="text/javascript" src='../bower_components/jquery/dist/jquery.min.js'></script>
+  <script type="text/javascript" src='../bower_components/angular/angular.min.js'></script>
+  <script type="text/javascript" src='../bower_components/angular-animate/angular-animate.min.js'></script>
+  <script type="text/javascript" src='../bower_components/angular-ui-router/release/angular-ui-router.min.js'></script>
+  <script type="text/javascript" src='../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js'></script>
+  <script type="text/javascript" src='app.js'></script>
+  <script type="text/javascript" src='experiments/experiments-service.js'></script>
+  <script type="text/javascript" src='experiments/experiments-controller.js'></script>
+  <script type="text/javascript" src='info/info-service.js'></script>
+  <script type="text/javascript" src='app-controller.js'></script>
+  <script type="text/javascript" src='home/home-controller.js'></script>
+  <script type="text/javascript" src='navbar/navbar.js'></script>
+  <script type="text/javascript" src='navbar/navbar-service.js'></script>
+</body>
+</html>

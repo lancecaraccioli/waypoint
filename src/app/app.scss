@@ -1,0 +1,60 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+@import '../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap.scss';
+
+/* extend bootstrap animations */
+.slide {
+  left: 100%;
+  @include transition(left .20s ease);
+  &.in {
+    left: 0%;
+  }
+
+  &.navbar-collapse {
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    background-color:$navbar-default-bg;
+    & ul.nav {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    @media (min-width: $grid-float-breakpoint) {
+      position: relative;
+      width: auto;
+    }
+  }
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body section.wrapper {
+  display: flex;
+  height: 100%;
+  flex-flow: column nowrap;
+  align-items: stretch;
+  &>header {
+    .navbar {
+      margin: 0;
+    }
+    flex-basis: 50px;
+    order: 1;
+    max-height:50px;
+  };
+  &>section.app {
+    padding: 1.2em;
+    flex-basis: 100%;
+    order: 2;
+  };
+  &>footer {
+    flex-basis: 50px;
+    max-height: 50px;
+    min-height: 1.2em;
+    order: 3;
+  };
+
+}
+
+
