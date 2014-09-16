@@ -1,6 +1,6 @@
 module.exports = {
-  'root': './src',
-  'app': './src/app',
+  'root': '/home/lance/work/self/chrome/apps/waypoint/src',
+  'app': '/home/lance/work/self/chrome/apps/waypoint/src/app',
   'path': {
     'app': '<%= source.app %>',
     'bower_components': '<%= source.root %>/bower_components'

@@ -1,0 +1,77 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body section.wrapper {
+  display: flex;
+  height: 100%;
+  flex-flow: column nowrap;
+  align-items: stretch;
+  &>header {
+    .navbar {
+      margin: 0;
+
+      .navbar-toggle.flat{
+        @extend .navbar-brand;
+        border: none;
+        margin: 0;
+      }
+    }
+    flex-basis: $navbar-height;
+    flex-shrink: 0;
+    flex-grow: 0;
+    order: 1;
+  };
+  &>section.app {
+    position: relative;
+    height: 100%;
+    flex-basis: 100%;
+    order: 2;
+
+    section.app-menu-panel {
+      padding: 0;
+      position: absolute;
+      width: 95%;
+      height: 100%;
+      right: 100%;
+      background-color: rgba(darken($navbar-default-bg, 10%), 0.9);
+      z-index:20;
+      @include transition(right .20s ease);
+
+      .navbar-nav {
+        margin: 0;
+      }
+
+      &.open {
+        right: 5%;
+        @include transition(right .20s ease);
+      }
+    }
+
+    section.app-body-panel {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      @include transition(left .20s ease);
+
+      &.menu-open {
+        left: 85%;
+        @include transition(left .20s ease);
+      }
+
+      [ui-view=appBody] {
+        padding: 0 1.2em;
+      }
+    }
+
+  };
+  /*&>footer {
+    flex-basis: 50px;
+    max-height: 50px;
+    min-height: 1.2em;
+    order: 3;
+  };*/
+
+}
