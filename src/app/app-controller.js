@@ -7,7 +7,7 @@
       'info',
       'appmap',
       function ($scope, $state, appInfo, appmap) {
-        $scope.appInfo = appInfo;
+        $scope.app = {info:appInfo, title:appInfo.name};
 
         $scope.menu = {
           items: appmap.getItems(),
@@ -21,6 +21,7 @@
         $scope.menuItemSelected = function (menuItem) {
           appmap.selectItem(menuItem);
           $scope.menu.isOpen = false;
+          $scope.app.title = menuItem.name;
           $state.go(menuItem.toState.name);
         };
 

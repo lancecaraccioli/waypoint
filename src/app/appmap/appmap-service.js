@@ -6,10 +6,10 @@
       var appmapService = {
 
         items: [
-          {'name': 'home', 'heading': 'Home', 'glyph': 'home', toState: {name: 'home'}},
-          {'name': 'experiments', 'heading': 'Experiments', 'glyph': 'fire'},
-          {'name': 'settings', 'heading': 'Settings', 'glyph': 'cog'},
-          {'name': 'about', 'heading': 'About', 'glyph': 'info-sign'}
+          {'name': 'home', 'glyph': 'home'},
+          {'name': 'experiments', 'glyph': 'fire'},
+          {'name': 'settings', 'glyph': 'cog'},
+          {'name': 'about', 'glyph': 'info-sign'}
         ],
 
         selectedItem: null,

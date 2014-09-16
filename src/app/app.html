@@ -2,7 +2,7 @@
 <html lang="en" data-ng-app="app" data-ng-csp data-ng-controller="AppController">
 <head>
   <meta charset="utf-8">
-  <title ng-bind="appInfo.name + ' (' + appInfo.version + ')'"></title>
+  <title ng-bind="app.info.name + ' (' + app.info.version + ')'"></title>
 
   <link rel="stylesheet" href="../bower_components/angular/angular-csp.css">
   <link rel="stylesheet" href="app.css">
@@ -13,14 +13,17 @@
   <section class="wrapper">
     <header data-ng-include="'app-header.html'"></header>
     <section class="app">
-      <section class="app-menu-panel"
-               ng-class="{'open': menu.isOpen}"
-               data-ng-include="'app-menu.html'"></section>
       <section
-               class="app-body-panel"
-               ng-class="{'menu-open': menu.isOpen}"
-        >
-        <div ui-view="appBody"></div>
+        class="app-menu-panel panel panel-default"
+        ng-class="{'open': menu.isOpen}">
+        <div data-ng-include="'app-menu.html'" class="panel-body"></div>
+      </section>
+      <section
+        class="app-body-panel panel panel-default"
+        ng-class="{'menu-open': menu.isOpen}">
+        <div class="panel-body">
+          <div ui-view="appBody"></div>
+        </div>
       </section>
     </section>
 

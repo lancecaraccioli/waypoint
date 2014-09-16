@@ -1,9 +1,16 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 
-/*@import "../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/variables";*/
-@import "../bower_components/bootswatch-scss/superhero/variables";
+$border-radius-base:        0px !default;
+$border-radius-large:       0px !default;
+$border-radius-small:       0px !default;
+
+@import "../bower_components/bootswatch-scss/cyborg/variables";
+@import "../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/variables";
+
 @import "../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
-@import "../bower_components/bootswatch-scss/superhero/bootswatch";
+$web-font: '';
+
+@import "../bower_components/bootswatch-scss/cyborg/bootswatch";
 
 
 @import "app-layout";

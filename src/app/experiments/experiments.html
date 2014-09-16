@@ -1,7 +1,3 @@
-<div class="experiments-list">
-  <h1>Experiments</h1>
-
-  <ul>
-    <li ng-repeat="experiment in experiments.experiments"><a ui-sref="experiments.{{experiment.name}}">{{experiment.name}}</a></li>
-  </ul>
+<div class="list-group">
+  <a class="list-group-item" ng-repeat="experiment in experiments.experiments" ui-sref="experiments.{{experiment.name}}">{{experiment.name}}</a>
 </div>
