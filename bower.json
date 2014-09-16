@@ -15,5 +15,8 @@
     "angular-ui-router": "~0.2.10",
     "bootstrap": "~3.2.0",
     "bootstrap-sass-official": "~3.2.0"
+  },
+  "devDependencies": {
+    "bootswatch-scss": "~3.2.0"
   }
 }

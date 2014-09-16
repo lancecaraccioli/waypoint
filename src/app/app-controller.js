@@ -5,29 +5,23 @@
       '$scope',
       '$state',
       'info',
-      'navbarService',
-      function ($scope, $state, appInfo, navbarService) {
+      'appmap',
+      function ($scope, $state, appInfo, appmap) {
         $scope.appInfo = appInfo;
-        $scope.nav = {
-          items: navbarService.getItems(),
-          brand: navbarService.getBrand(),
-          isCollapsed: true,
-          collapseToggle: function () {
-            $scope.nav.isCollapsed = !$scope.nav.isCollapsed;
+
+        $scope.menu = {
+          items: appmap.getItems(),
+
+          isOpen: false,
+          openToggle: function () {
+            $scope.menu.isOpen = !$scope.menu.isOpen;
           }
-        };
-        $scope.hasDropdownMenu = function (navItem) {
-          return navbarService.hasDropdownMenu(navItem);
-        };
-        $scope.getDropdownMenuTemplateUrl = function (navItem) {
-          return navbarService.getDropdownMenuTemplateUrl(navItem);
         };
 
-        $scope.navItemSelected = function (navItem) {
-          if (!$scope.hasDropdownMenu(navItem)) {
-            navbarService.selectItem(navItem);
-            $state.go(navItem.name);
-          }
+        $scope.menuItemSelected = function (menuItem) {
+          appmap.selectItem(menuItem);
+          $scope.menu.isOpen = false;
+          $state.go(menuItem.toState.name);
         };
 
         $state.go('home');
@@ -40,6 +34,22 @@
           views: {
             'appBody': {
               templateUrl: 'home/home.html'
+            }
+          }
+        })
+        .state('about', {
+          url: '/about',
+          views: {
+            'appBody': {
+              templateUrl: 'about/about.html'
+            }
+          }
+        })
+        .state('settings', {
+          url: '/settings',
+          views: {
+            'appBody': {
+              templateUrl: 'settings/settings.html'
             }
           }
         })

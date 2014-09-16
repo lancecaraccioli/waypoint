@@ -19,7 +19,7 @@ module.exports = {
     'ours': [
       '<%= source.app %>/app.js',
       '<%= source.app %>/**/experiments-service.js',
-      '<%= source.app %>/**/navbar.js',
+      '<%= source.app %>/**/appmap.js',
       '<%= source.app %>/**/*service.js',
       '<%= source.app %>/**/*controller.js'
     ],

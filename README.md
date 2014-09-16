@@ -1,4 +1,4 @@
-maths
-=====
+Waypoint
+========
 
-Math for visual learners.
+Automated timetracking

@@ -1,4 +1,4 @@
 (function () {
   'use strict';
-  angular.module('navbar', ['app']);
+  angular.module('appmap', ['app']);
 })();

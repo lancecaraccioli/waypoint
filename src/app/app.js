@@ -3,7 +3,7 @@
   var app = angular.module('app', [
     'ui.router',
     'ui.bootstrap',
-    'navbar',
+    'appmap',
     'ngAnimate'
   ]);
 
@@ -15,14 +15,6 @@
       currentImgSrcSanitizationWhitelist.toString().slice(-1);
 
     $compileProvider.imgSrcSanitizationWhitelist(newImgSrcSanitizationWhiteList);
-  });
-
-  app.directive('appNav', function () {
-    return {
-      replace: true,
-      restrict: 'EAC',
-      templateUrl: 'app-nav.html'
-    };
   });
 
 })();

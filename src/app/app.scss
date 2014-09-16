@@ -1,5 +1,12 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
-@import '../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap.scss';
+
+@import "../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/variables";
+@import "../bower_components/bootswatch-scss/superhero/variables";
+@import "../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
+$web-font: '';
+@import "../bower_components/bootswatch-scss/superhero/bootswatch";
+
+
 
 /* extend bootstrap animations */
 .slide {
@@ -13,13 +20,14 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
     position: absolute;
     width: 100%;
     margin: 0;
-    background-color:$navbar-default-bg;
+    background-color: $navbar-default-bg;
     & ul.nav {
       margin-top: 0;
       margin-bottom: 0;
+      border-bottom-color: $navbar-default-border;
     }
     @media (min-width: $grid-float-breakpoint) {
-      position: relative;
+      position: static;
       width: auto;
     }
   }
@@ -38,15 +46,56 @@ body section.wrapper {
   &>header {
     .navbar {
       margin: 0;
+
+      .navbar-toggle.flat{
+        @extend .navbar-brand;
+        border: none;
+        margin: 0;
+      }
     }
-    flex-basis: 50px;
+    flex-basis: 59px;
     order: 1;
-    max-height:50px;
+    max-height:59px;
   };
   &>section.app {
-    padding: 1.2em;
+    height: 100%;
     flex-basis: 100%;
     order: 2;
+
+    section.app-menu-panel {
+      padding: 0;
+      position: absolute;
+      width: 95%;
+      height: 100%;
+      right: 100%;
+      background-color: rgba(darken($navbar-default-bg, 10%), 0.9);
+      z-index:20;
+      @include transition(right .50s ease);
+
+      .navbar-nav {
+        margin: 0;
+      }
+
+      &.open {
+        right: 5%;
+        @include transition(right .50s ease);
+      }
+    }
+
+    section.app-body-panel {
+      padding: 0 1.2em;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      @include transition(left .50s ease);
+
+      &.menu-open {
+        left: 85%;
+        @include transition(left .50s ease);
+      }
+    }
+
   };
   &>footer {
     flex-basis: 50px;

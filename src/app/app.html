@@ -11,10 +11,15 @@
 <body>
 
   <section class="wrapper">
-    <header data-ng-include="'app-nav.html'"></header>
+    <header data-ng-include="'app-header.html'"></header>
     <section class="app">
-      <section data-ui-view="appBody" class="app-body-pane"></section>
-      <section data-ui-view="appMenu" class="app-menu-panel" data-ng-class="{open: showMenu}"></section>
+      <section class="app-menu-panel"
+               ng-class="{'open': menu.isOpen}"
+               data-ng-include="'app-menu.html'"></section>
+      <section
+               class="app-body-panel"
+               ng-class="{'menu-open': menu.isOpen}"
+        ><div data-ui-view="appBody"></div></section>
     </section>
 
     <footer></footer>
@@ -31,7 +36,9 @@
   <script type="text/javascript" src='info/info-service.js'></script>
   <script type="text/javascript" src='app-controller.js'></script>
   <script type="text/javascript" src='home/home-controller.js'></script>
-  <script type="text/javascript" src='navbar/navbar.js'></script>
-  <script type="text/javascript" src='navbar/navbar-service.js'></script>
+  <script type="text/javascript" src='about/about-controller.js'></script>
+  <script type="text/javascript" src='settings/settings-controller.js'></script>
+  <script type="text/javascript" src='appmap/appmap.js'></script>
+  <script type="text/javascript" src='appmap/appmap-service.js'></script>
 </body>
 </html>
