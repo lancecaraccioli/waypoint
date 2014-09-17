@@ -1,3 +1,4 @@
+/*global __dirname */
 module.exports = function (grunt) {
   'use strict';
 
@@ -5,6 +6,7 @@ module.exports = function (grunt) {
   require('load-grunt-config')(grunt, {
     postProcess: function (config) {
       config.pkg = grunt.file.readJSON('package.json');
+      config.projectRoot = __dirname;
       config.build.target = grunt.option('target') || config.build.target;
     }
   });
@@ -88,7 +90,7 @@ module.exports = function (grunt) {
       'watch'
     ];
 
-    
+
     grunt.task.run(tasks);
   });
 

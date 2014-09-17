@@ -1,4 +1,4 @@
 Waypoint
 ========
 
-Automated timetracking
+Basic Angular ChromeApp Skeleton
