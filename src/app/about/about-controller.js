@@ -9,16 +9,20 @@
         var that = this,
           win = angular.element($window);
 
-        var onResize = function windowResizeHandler() {
+        var calcScreen = function calculateScreenDimensions() {
           that.screen = {
             height: win.height(),
             width: win.width()
           };
         };
 
+        var onResize = function windowResizeHandler() {
+          $scope.$apply(calcScreen);
+        };
+
         win.on('resize', onResize);
 
-        onResize();
+        calcScreen();
 
         $scope.$on('$destroy', function() { win.off('resize', onResize); });
 
