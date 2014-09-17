@@ -1,4 +1,6 @@
-<div ng-cloak data-ng-controller="AboutController">
+<div ng-cloak data-ng-controller="AboutController as about">
   <p>{{app.info.name}} ({{app.info.version}})</p>
   <p>{{app.info.description}}</p>
+  <p>width: {{about.screen.width}}</p>
+  <p>height: {{about.screen.height}}</p>
 </div>
