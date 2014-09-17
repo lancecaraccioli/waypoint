@@ -21,7 +21,7 @@
         $scope.menuItemSelected = function (menuItem) {
           appmap.selectItem(menuItem);
           $scope.menu.isOpen = false;
-          $scope.app.title = menuItem.name;
+          $scope.app.subtitle = menuItem.name;
           $state.go(menuItem.toState.name);
         };
 

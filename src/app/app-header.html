@@ -3,10 +3,10 @@
   <div class="container-flex">
     <div class="navbar-header">
       <span class="navbar-toggle flat" ng-click="menu.openToggle()">
-        <span class="sr-only">Toggle menu</span>
+        <span class="sr-only">Toggle Menu</span>
         <span class="glyphicon glyphicon-tasks"></span>
       </span>
-      <a class="navbar-brand">{{app.title}}</a>
+      <a class="navbar-brand"><span>{{app.title}}</span><span ng-if="app.subtitle"> | </span><span ng-if="app.subtitle">{{app.subtitle}}</span></a>
     </div>
   </div>
 </div>

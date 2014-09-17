@@ -1,3 +1,5 @@
+$animation-duration: .3s;
+
 html, body {
   height: 100%;
   width: 100%;
@@ -10,7 +12,11 @@ body section.wrapper {
   align-items: stretch;
   &>header {
     .navbar {
+      border-top-width: 0;
+      border-left-width: 0;
+      border-right-width: 0;
       margin: 0;
+      height: $navbar-height;
 
       .navbar-toggle.flat{
         @extend .navbar-brand;
@@ -31,21 +37,25 @@ body section.wrapper {
 
     section.app-menu-panel {
       padding: 0;
+      border-top: none;
       position: absolute;
       width: 85%;
       height: 100%;
-      right: 100%;
-      /*background-color: rgba($panel-bg, 0.7);*/
+      transform: translate3d(-100%, 0px, 0px);
       z-index:20;
-      @include transition(right .20s ease);
+      @include transition(transform $animation-duration ease);
 
       .panel-body {
         padding: 0;
       }
 
+      .list-group-item:first-child {
+        margin-top: -1px;
+      }
+
       &.open {
-        right: 15%;
-        @include transition(right .20s ease);
+        transform: translateX(0);
+        @include transition(transform $animation-duration ease);
       }
     }
 
@@ -54,12 +64,13 @@ body section.wrapper {
       position: absolute;
       width: 100%;
       height: 100%;
-      left: 0;
-      @include transition(left .20s ease);
+      transform: translate3d(0px, 0px, 0px);
+      z-index:10;
+      @include transition(transform $animation-duration ease);
 
       &.menu-open {
-        left: 85%;
-        @include transition(left .20s ease);
+        transform: translateX(85%);
+        @include transition(transform $animation-duration ease);
       }
 
     }
