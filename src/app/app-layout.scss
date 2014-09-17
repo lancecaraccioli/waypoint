@@ -1,4 +1,6 @@
-$animation-duration: .3s;
+$animation-duration-base: .3s;
+$animation-duration-in: $animation-duration-base;
+$animation-duration-out: .5s;
 
 html, body {
   height: 100%;
@@ -43,7 +45,7 @@ body section.wrapper {
       height: 100%;
       transform: translate3d(-100%, 0px, 0px);
       z-index:20;
-      @include transition(transform $animation-duration ease);
+      @include transition(transform $animation-duration-out ease-in-out);
 
       .panel-body {
         padding: 0;
@@ -55,7 +57,7 @@ body section.wrapper {
 
       &.open {
         transform: translateX(0);
-        @include transition(transform $animation-duration ease);
+        @include transition(transform $animation-duration-in ease-in-out);
       }
     }
 
@@ -66,11 +68,11 @@ body section.wrapper {
       height: 100%;
       transform: translate3d(0px, 0px, 0px);
       z-index:10;
-      @include transition(transform $animation-duration ease);
+      @include transition(transform $animation-duration-out ease-in-out);
 
       &.menu-open {
         transform: translateX(85%);
-        @include transition(transform $animation-duration ease);
+        @include transition(transform $animation-duration-in ease-in-out);
       }
 
     }

@@ -76,8 +76,6 @@ module.exports = function (grunt) {
 
     tasks.push('sass:' + buildTarget);
 
-    tasks.push('watch');
-
     grunt.task.run(tasks);
   });
 
@@ -86,9 +84,11 @@ module.exports = function (grunt) {
 
     var tasks = [
       'build:' + buildTarget,
-      'connect:serve'
+      'connect:serve',
+      'watch'
     ];
 
+    
     grunt.task.run(tasks);
   });
 
