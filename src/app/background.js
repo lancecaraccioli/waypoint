@@ -3,8 +3,8 @@ chrome.app.runtime.onLaunched.addListener(function () {
   'use strict';
 
   // Center window on screen.
-  var minWidth = screen.availWidth < 320 ? screen.availWidth : 320,
-    minHeight = screen.availHeight < 480 ? screen.availHeight : 480,
+  var minWidth = screen.availWidth < 360 ? screen.availWidth : 360,
+    minHeight = screen.availHeight < 615 ? screen.availHeight : 615,
     width = minWidth,
     height = minHeight;
 
