@@ -1,4 +1,4 @@
-(function () {
+(function() {
   'use strict';
   angular.module('app').
     controller('AppController', [
@@ -6,19 +6,19 @@
       '$state',
       'info',
       'appmap',
-      function ($scope, $state, appInfo, appmap) {
-        $scope.app = {info:appInfo, title:appInfo.name};
+      function($scope, $state, appInfo, appmap) {
+        $scope.app = {info: appInfo, title: appInfo.name};
 
         $scope.menu = {
           items: appmap.getItems(),
 
           isOpen: false,
-          openToggle: function () {
+          openToggle: function() {
             $scope.menu.isOpen = !$scope.menu.isOpen;
           }
         };
 
-        $scope.menuItemSelected = function (menuItem) {
+        $scope.menuItemSelected = function(menuItem) {
           appmap.selectItem(menuItem);
           $scope.menu.isOpen = false;
           $scope.app.subtitle = menuItem.name;
@@ -28,7 +28,7 @@
         $state.go('home');
       }
     ])
-    .config(function ($stateProvider) {
+    .config(function($stateProvider) {
       $stateProvider
         .state('home', {
           url: '/home',

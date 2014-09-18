@@ -1,11 +1,11 @@
-(function () {
+(function() {
   'use strict';
   angular.module('app').
-    controller('MaExperiments', function ($scope, maExperiments) {
+    controller('MaExperiments', function($scope, maExperiments) {
       this.experiments = maExperiments.getList();
     });
 
-  angular.module('app').config(function ($stateProvider) {
+  angular.module('app').config(function($stateProvider) {
     $stateProvider
       .state('experiments.pi', {
         url: '/experiments/pi',

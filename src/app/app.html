@@ -1,49 +1,49 @@
 <!doctype html>
 <html lang="en" data-ng-app="app" data-ng-csp data-ng-controller="AppController">
 <head>
-  <meta charset="utf-8">
-  <title ng-bind="app.info.name + ' (' + app.info.version + ')'"></title>
+    <meta charset="utf-8">
+    <title ng-bind="app.info.name + ' (' + app.info.version + ')'"></title>
 
-  <link rel="stylesheet" href="../bower_components/angular/angular-csp.css">
-  <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="../bower_components/angular/angular-csp.css">
+    <link rel="stylesheet" href="app.css">
 
 </head>
 <body>
 
-  <section class="wrapper">
+<section class="wrapper">
     <header data-ng-include="'app-header.html'"></header>
     <section class="app">
-      <section
-        class="app-menu-panel panel panel-default"
-        ng-class="{'open': menu.isOpen}">
-        <div data-ng-include="'app-menu.html'" class="panel-body"></div>
-      </section>
-      <section
-        class="app-body-panel"
-        ng-class="{'menu-open': menu.isOpen}">
-        <div class="panel-body">
-          <div ui-view="appBody"></div>
-        </div>
-      </section>
+        <section
+                class="app-menu-panel panel panel-default"
+                ng-class="{'open': menu.isOpen}">
+            <div data-ng-include="'app-menu.html'" class="panel-body"></div>
+        </section>
+        <section
+                class="app-body-panel"
+                ng-class="{'menu-open': menu.isOpen}">
+            <div class="panel-body">
+                <div ui-view="appBody"></div>
+            </div>
+        </section>
     </section>
 
     <footer></footer>
-  </section>
+</section>
 
-  <script type="text/javascript" src='../bower_components/jquery/dist/jquery.min.js'></script>
-  <script type="text/javascript" src='../bower_components/angular/angular.min.js'></script>
-  <script type="text/javascript" src='../bower_components/angular-animate/angular-animate.min.js'></script>
-  <script type="text/javascript" src='../bower_components/angular-ui-router/release/angular-ui-router.min.js'></script>
-  <script type="text/javascript" src='../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js'></script>
-  <script type="text/javascript" src='app.js'></script>
-  <script type="text/javascript" src='experiments/experiments-service.js'></script>
-  <script type="text/javascript" src='experiments/experiments-controller.js'></script>
-  <script type="text/javascript" src='info/info-service.js'></script>
-  <script type="text/javascript" src='app-controller.js'></script>
-  <script type="text/javascript" src='home/home-controller.js'></script>
-  <script type="text/javascript" src='about/about-controller.js'></script>
-  <script type="text/javascript" src='settings/settings-controller.js'></script>
-  <script type="text/javascript" src='appmap/appmap.js'></script>
-  <script type="text/javascript" src='appmap/appmap-service.js'></script>
+<script type="text/javascript" src='../bower_components/jquery/dist/jquery.min.js'></script>
+<script type="text/javascript" src='../bower_components/angular/angular.min.js'></script>
+<script type="text/javascript" src='../bower_components/angular-animate/angular-animate.min.js'></script>
+<script type="text/javascript" src='../bower_components/angular-ui-router/release/angular-ui-router.min.js'></script>
+<script type="text/javascript" src='../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js'></script>
+<script type="text/javascript" src='app.js'></script>
+<script type="text/javascript" src='experiments/experiments-service.js'></script>
+<script type="text/javascript" src='experiments/experiments-controller.js'></script>
+<script type="text/javascript" src='info/info-service.js'></script>
+<script type="text/javascript" src='app-controller.js'></script>
+<script type="text/javascript" src='home/home-controller.js'></script>
+<script type="text/javascript" src='about/about-controller.js'></script>
+<script type="text/javascript" src='settings/settings-controller.js'></script>
+<script type="text/javascript" src='appmap/appmap.js'></script>
+<script type="text/javascript" src='appmap/appmap-service.js'></script>
 </body>
 </html>

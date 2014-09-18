@@ -1,7 +1,7 @@
-(function () {
+(function() {
   'use strict';
   angular.module('appmap')
-    .factory('appmap', ['info', function (appInfo) {
+    .factory('appmap', ['info', function(appInfo) {
       var itemNameIndex = {};
       var appmapService = {
 
@@ -13,7 +13,7 @@
         ],
 
         selectedItem: null,
-        selectItem: function (item) {
+        selectItem: function(item) {
           var selectedItem = appmapService.getSelectedItem();
           selectedItem.active = false;
           selectedItem = appmapService.getItem(item) || selectedItem;
@@ -22,7 +22,7 @@
 
           return appmapService;
         },
-        getItem: function (item) {
+        getItem: function(item) {
           var itemName;
           if (typeof item === 'string') {
             itemName = item;
@@ -35,18 +35,18 @@
           }
         },
 
-        getSelectedItem: function () {
+        getSelectedItem: function() {
           if (!appmapService.selectedItem) {
             appmapService.selectedItem = appmapService.getItems()[0];
           }
 
           return appmapService.selectedItem;
         },
-        getItems: function () {
+        getItems: function() {
           return appmapService.items;
         }
       };
-      angular.forEach(appmapService.items, function (item, index) {
+      angular.forEach(appmapService.items, function(item, index) {
         item.toState = item.toState || {name: item.name};
         itemNameIndex[item.name] = index;
       });

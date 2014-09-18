@@ -1,12 +1,12 @@
 /*global chrome */
-chrome.app.runtime.onLaunched.addListener(function () {
+chrome.app.runtime.onLaunched.addListener(function() {
   'use strict';
 
   // Center window on screen.
-  var minWidth = screen.availWidth < 360 ? screen.availWidth : 360,
-    minHeight = screen.availHeight < 615 ? screen.availHeight : 615,
-    width = minWidth,
-    height = minHeight;
+  var minWidth = screen.availWidth < 360 ? screen.availWidth : 360;
+  var minHeight = screen.availHeight < 615 ? screen.availHeight : 615;
+  var width = minWidth;
+  var height = minHeight;
 
   chrome.app.window.create('app/app.html', {
     id: 'com.lancecaraccioli.apps.chrome.waypoint',

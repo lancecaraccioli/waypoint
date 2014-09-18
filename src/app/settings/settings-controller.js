@@ -1,9 +1,8 @@
-(function () {
-  'use strict';
-  angular.module('app').
-    controller('SettingsController', [
-      '$scope',
-      function ($scope) {
-      }
-    ]);
-})();
+angular.module('app').
+  controller('SettingsController', [
+    '$scope',
+    function($scope) {
+      'use strict';
+
+    }
+  ]);

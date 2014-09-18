@@ -1,9 +1,9 @@
-(function () {
+(function() {
   'use strict';
 
-  angular.module('app').factory('maExperiments', function () {
+  angular.module('app').factory('maExperiments', function() {
     return {
-      getList: function () {
+      getList: function() {
         return [{'name': 'pi'}];
       }
     };

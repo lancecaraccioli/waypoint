@@ -1,7 +1,7 @@
-describe('App Controller', function () {
+describe('App Controller', function() {
   'use strict';
 
-  it('should pass', function () {
+  it('should pass', function() {
     expect('foo').toBe('foo');
   });
 });

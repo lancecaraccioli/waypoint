@@ -58,16 +58,6 @@ module.exports = function (grunt) {
       'code-quality',
       'test',
       'chrome-app-manifest'
-       /*
-       'ngtemplates',
-       'cssmin',
-       'concat',
-       'ngmin',
-       'uglify',
-       'copy',
-       'htmlmin',
-       'imagemin',
-       'clean:after',*/
     ];
 
     //TODO move target specific tasks list to build.js grunt config
