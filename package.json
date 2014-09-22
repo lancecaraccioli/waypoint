@@ -2,7 +2,7 @@
   "name": "waypoint",
   "brand": "Waypoint",
   "version": "0.0.1",
-  "description": "Automated time tracking",
+  "description": "Skeleton Chrome App",
   "author": {
     "name": "Lance Caraccioli",
     "email": "lance.caraccioli@gmail.com"
