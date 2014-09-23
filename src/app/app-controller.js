@@ -28,40 +28,25 @@
         $state.go('home');
       }
     ])
-    .config(function($stateProvider) {
-      $stateProvider
-        .state('home', {
-          url: '/home',
-          views: {
-            'appBody': {
-              templateUrl: 'home/home.html'
+    .config(function($stateProvider, appmapProvider) {
+
+      appmapProvider.config([
+        {'name': 'home', 'glyph': 'home'},
+        {'name': 'settings', 'glyph': 'cog'},
+        {'name': 'about', 'glyph': 'info-sign'}
+      ]);
+
+      angular.forEach(appmapProvider.items, function(item) {
+        item.toState = item.toState || {name: item.name};
+        $stateProvider
+          .state(item.name, {
+            url: '/' + item.name,
+            views: {
+              'appBody': {
+                templateUrl: item.name + '/' + item.name + '.html'
+              }
             }
-          }
-        })
-        .state('about', {
-          url: '/about',
-          views: {
-            'appBody': {
-              templateUrl: 'about/about.html'
-            }
-          }
-        })
-        .state('settings', {
-          url: '/settings',
-          views: {
-            'appBody': {
-              templateUrl: 'settings/settings.html'
-            }
-          }
-        })
-        .state('experiments', {
-          url: '/experiments',
-          views: {
-            'appBody': {
-              controller: 'MaExperiments as experiments',
-              templateUrl: 'experiments/experiments.html'
-            }
-          }
-        });
+          });
+      });
     });
 })();
